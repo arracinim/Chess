@@ -12,7 +12,7 @@ if __name__ == "__main__":
     
 
     """Para cada pieza generamos un tablero diferente, inicializamos en una pocisión 
-        Aleatoria del tablero y generamos las posibles pocisiones"""
+        aleatoria del tablero y generamos las posibles pocisiones"""
 
     for piece in pieceNames:
         if piece == "PEON":
@@ -30,6 +30,10 @@ if __name__ == "__main__":
                     boardDictionary[piece+" BOARD"].pieceMovement(movimiento)
                 except:
                     pass
+            print("PEON \n")
+            x = np.array(boardDictionary[piece+" BOARD"].getBoard())
+            print(np.squeeze(x))
+            print("\n")
 
         elif piece == "ALFIL":
             boardDictionary[piece+" BOARD"] = board()
@@ -46,6 +50,11 @@ if __name__ == "__main__":
                     boardDictionary[piece+" BOARD"].pieceMovement(movimiento)
                 except:
                     pass
+
+            print("ALFIL \n")
+            x = np.array(boardDictionary[piece+" BOARD"].getBoard())
+            print(np.squeeze(x))
+            print("\n")
             
 
         elif piece == "REINA":
@@ -63,7 +72,9 @@ if __name__ == "__main__":
                     boardDictionary[piece+" BOARD"].pieceMovement(movimiento)
                 except:
                     pass
-            
+            print("REINA \n")
+            print(np.array(boardDictionary[piece+" BOARD"].getBoard()))
+            print("\n")
 
         elif piece == "REY":
             boardDictionary[piece+" BOARD"] = board()
@@ -80,8 +91,9 @@ if __name__ == "__main__":
                     boardDictionary[piece+" BOARD"].pieceMovement(movimiento)
                 except:
                     pass
-            
-
+            print("REY \n")
+            print(np.array(boardDictionary[piece+" BOARD"].getBoard()))
+            print("\n")
 
         elif piece == "TORRE":
             boardDictionary[piece+" BOARD"] = board()
@@ -98,8 +110,9 @@ if __name__ == "__main__":
                     boardDictionary[piece+" BOARD"].pieceMovement(movimiento)
                 except:
                     pass
-            
-
+            print("TORRE \n")
+            print(np.array(boardDictionary[piece+" BOARD"].getBoard()))
+            print("\n")
 
         elif piece == "CABALLO":
             boardDictionary[piece+" BOARD"] = board()
@@ -116,7 +129,9 @@ if __name__ == "__main__":
                     boardDictionary[piece+" BOARD"].pieceMovement(movimiento)
                 except:
                     pass
-            
+            print("CABALLO \n")
+            print(np.array(boardDictionary[piece+" BOARD"].getBoard()))
+            print("\n")            
 
         else:
             pass

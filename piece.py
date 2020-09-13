@@ -46,7 +46,7 @@ class peon(piece):
 
 class alfil(piece):
     def __init__(self):
-        self.tipo = "ARFIL"
+        self.tipo = "ALFIL"
         self.position = (0,0)
 
     def Move(self):
@@ -59,13 +59,11 @@ class alfil(piece):
         columna = self.position[1]
         fila = self.position[0]
 
-        for i in range(8):
-           for j in range(8):
-                if i != fila and j != columna:
-                    listaMovimientos.append([fila-i,columna-j])
-                    listaMovimientos.append([fila+i,columna+j])
-                    listaMovimientos.append([fila-i,columna+j])
-                    listaMovimientos.append([fila+i,columna-j])
+        for i in range(1,8):
+            listaMovimientos.append([fila-i,columna-i])
+            listaMovimientos.append([fila+i,columna+i])
+            listaMovimientos.append([fila-i,columna+i])
+            listaMovimientos.append([fila+i,columna-i])
 
         return listaMovimientos
 
@@ -97,7 +95,7 @@ class torre(piece):
 
 class reina(piece):
     def __init__(self):
-        self.tipo = "PEON"
+        self.tipo = "REINA"
         self.position = (0,0)
 
     def Move(self):
@@ -120,19 +118,17 @@ class reina(piece):
                 listaMovimientos.append([i, columna])
 
         #AGREGAMOS LOS MOVIMIENTOS EN X 
-        for i in range(8):
-           for j in range(8):
-                if i != fila and j != columna:
-                    listaMovimientos.append([fila-i,columna-j])
-                    listaMovimientos.append([fila+i,columna+j])
-                    listaMovimientos.append([fila-i,columna+j])
-                    listaMovimientos.append([fila+i,columna-j])
+        for i in range(1,8):
+            listaMovimientos.append([fila-i,columna-i])
+            listaMovimientos.append([fila+i,columna+i])
+            listaMovimientos.append([fila-i,columna+i])
+            listaMovimientos.append([fila+i,columna-i])
 
         return listaMovimientos
 
 class rey(piece):
     def __init__(self):
-        self.tipo = "PEON"
+        self.tipo = "REY"
         self.position = (0,0)
 
     def Move(self):
@@ -158,7 +154,7 @@ class rey(piece):
 
 class caballo(piece):
     def __init__(self):
-        self.tipo = "PEON"
+        self.tipo = "CABALLO"
         self.position = (0,0)
 
     def Move(self):
@@ -171,7 +167,7 @@ class caballo(piece):
         columna = self.position[1]
         fila = self.position[0]
 
-        listaMovimientos.append([fila + 2,columna - 1])
+        listaMovimientos.append([fila + 2, columna - 1])
         listaMovimientos.append([fila - 1, columna + 2])
         listaMovimientos.append([fila - 2, columna - 1])
         listaMovimientos.append([fila + 2, columna + 1])

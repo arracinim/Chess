@@ -18,9 +18,12 @@ class board(object):
         """
         Esta funcion establece los posibles movimientos que una ficha puede tener en el tablero
         """
-        self.Tablero[lista[0]][lista[1]] = 1
+        if lista[0] < 0 or lista[1] < 0:
+            pass
+        else:
+            self.Tablero[lista[0]][lista[1]] = 1
 
-    def __repr__(self):
-        return self.Tablero.__str__()
+    def getBoard(self):
+        return self.Tablero
     
 
