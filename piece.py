@@ -167,13 +167,17 @@ class caballo(piece):
         columna = self.position[1]
         fila = self.position[0]
 
-        listaMovimientos.append([fila + 2, columna - 1])
-        listaMovimientos.append([fila - 1, columna + 2])
-        listaMovimientos.append([fila - 2, columna - 1])
+        #cuadrante1
         listaMovimientos.append([fila + 2, columna + 1])
         listaMovimientos.append([fila + 1, columna + 2])
-        listaMovimientos.append([fila - 1, columna  + 1])
-        listaMovimientos.append([fila + 1, columna - 1])
-        listaMovimientos.append([fila - 2, columna  + 1])
+        #cuadrante2
+        listaMovimientos.append([fila - 1, columna + 2])
+        listaMovimientos.append([fila - 2, columna + 1])
+        #cuadrante3
+        listaMovimientos.append([fila - 2, columna - 1])
+        listaMovimientos.append([fila - 1, columna  - 2])
+        #Cuadrante4
+        listaMovimientos.append([fila + 1, columna - 2])
+        listaMovimientos.append([fila + 2, columna  - 1])
 
         return listaMovimientos

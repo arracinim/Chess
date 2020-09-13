@@ -31,8 +31,7 @@ if __name__ == "__main__":
                 except:
                     pass
             print("PEON \n")
-            x = np.array(boardDictionary[piece+" BOARD"].getBoard())
-            print(np.squeeze(x))
+            print(np.array(boardDictionary[piece+" BOARD"].getBoard()))
             print("\n")
 
         elif piece == "ALFIL":
@@ -52,8 +51,7 @@ if __name__ == "__main__":
                     pass
 
             print("ALFIL \n")
-            x = np.array(boardDictionary[piece+" BOARD"].getBoard())
-            print(np.squeeze(x))
+            print(np.array(boardDictionary[piece+" BOARD"].getBoard()))
             print("\n")
             
 
@@ -136,5 +134,5 @@ if __name__ == "__main__":
         else:
             pass
 
-        #IMPRIMIMOS LOS DIFERENTES POSIBLES MOVIMIENTOS PARA UNA FICHA DADA UNA POCISION ALEATORIA.
+        
 
