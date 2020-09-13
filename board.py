@@ -12,7 +12,7 @@ class board(object):
         self.Tablero[x][y] = 8
 
     def pieceMovement(self,lista):
-        pass
+        self.Tablero[lista[0]][lista[1]] = 1
 
     def __repr__(self):
         return self.Tablero.__str__()
