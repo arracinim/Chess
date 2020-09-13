@@ -3,6 +3,7 @@ sys.path.append(".")
 
 from board import board
 from piece import peon, torre, caballo,alfil,reina, rey
+import numpy as np
 
 #Main
 if __name__ == "__main__":
@@ -20,7 +21,7 @@ if __name__ == "__main__":
             #generamos una pocision incial aleatoria para la ficha
             posicionInicial = peon.setPosition()
             #Generamos la lista con los posibles movimientos para la pieza en cuestion
-            posiblesMovimientos = peon.makeMove()
+            posiblesMovimientos = peon.Move()
             #Añadimos la pocision inicial de la ficha al tablero
             boardDictionary[piece+" BOARD"].pieceposition(posicionInicial[0],posicionInicial[1])
             #Agregamos al tablero las posibles posiciones para la ficha en cuestion
@@ -36,7 +37,7 @@ if __name__ == "__main__":
             #generamos una pocision incial aleatoria para la ficha
             posicionInicial = alfil.setPosition()
             #Generamos la lista con los posibles movimientos para la pieza en cuestion
-            posiblesMovimientos = alfil.makeMove()
+            posiblesMovimientos = alfil.Move()
             #Añadimos la pocision inicial de la ficha al tablero
             boardDictionary[piece+" BOARD"].pieceposition(posicionInicial[0],posicionInicial[1])
             #Agregamos al tablero las posibles posiciones para la ficha en cuestion
@@ -45,6 +46,7 @@ if __name__ == "__main__":
                     boardDictionary[piece+" BOARD"].pieceMovement(movimiento)
                 except:
                     pass
+            
 
         elif piece == "REINA":
             boardDictionary[piece+" BOARD"] = board()
@@ -52,7 +54,7 @@ if __name__ == "__main__":
             #generamos una pocision incial aleatoria para la ficha
             posicionInicial = reina.setPosition()
             #Generamos la lista con los posibles movimientos para la pieza en cuestion
-            posiblesMovimientos = reina.makeMove()
+            posiblesMovimientos = reina.Move()
             #Añadimos la pocision inicial de la ficha al tablero
             boardDictionary[piece+" BOARD"].pieceposition(posicionInicial[0],posicionInicial[1])
             #Agregamos al tablero las posibles posiciones para la ficha en cuestion
@@ -61,6 +63,7 @@ if __name__ == "__main__":
                     boardDictionary[piece+" BOARD"].pieceMovement(movimiento)
                 except:
                     pass
+            
 
         elif piece == "REY":
             boardDictionary[piece+" BOARD"] = board()
@@ -68,7 +71,7 @@ if __name__ == "__main__":
             #generamos una pocision incial aleatoria para la ficha
             posicionInicial = rey.setPosition()
             #Generamos la lista con los posibles movimientos
-            posiblesMovimientos = rey.makeMove()
+            posiblesMovimientos = rey.Move()
             #Añadimos la pocision inicial de la ficha al tablero
             boardDictionary[piece+" BOARD"].pieceposition(posicionInicial[0],posicionInicial[1])
             #Agregamos al tablero las posibles posiciones para la ficha en cuestion
@@ -77,6 +80,7 @@ if __name__ == "__main__":
                     boardDictionary[piece+" BOARD"].pieceMovement(movimiento)
                 except:
                     pass
+            
 
 
         elif piece == "TORRE":
@@ -85,7 +89,7 @@ if __name__ == "__main__":
             #generamos una pocision incial aleatoria para la ficha
             posicionInicial = torre.setPosition()
             #Generamos la lista con los posibles movimientos
-            posiblesMovimientos = torre.makeMove()
+            posiblesMovimientos = torre.Move()
             #Añadimos la pocision inicial de la ficha al tablero
             boardDictionary[piece+" BOARD"].pieceposition(posicionInicial[0],posicionInicial[1])
             #Agregamos al tablero las posibles posiciones para la ficha en cuestion
@@ -94,6 +98,7 @@ if __name__ == "__main__":
                     boardDictionary[piece+" BOARD"].pieceMovement(movimiento)
                 except:
                     pass
+            
 
 
         elif piece == "CABALLO":
@@ -102,7 +107,7 @@ if __name__ == "__main__":
             #generamos una pocision incial aleatoria para la ficha
             posicionInicial = caballo.setPosition()
             #Generamos la lista con los posibles movimientos
-            posiblesMovimientos = caballo.makeMove()
+            posiblesMovimientos = caballo.Move()
             #Añadimos la pocision inicial de la ficha al tablero
             boardDictionary[piece+" BOARD"].pieceposition(posicionInicial[0],posicionInicial[1])
             #Agregamos al tablero las posibles posiciones para la ficha en cuestion
@@ -111,6 +116,10 @@ if __name__ == "__main__":
                     boardDictionary[piece+" BOARD"].pieceMovement(movimiento)
                 except:
                     pass
+            
 
         else:
             pass
+
+        #IMPRIMIMOS LOS DIFERENTES POSIBLES MOVIMIENTOS PARA UNA FICHA DADA UNA POCISION ALEATORIA.
+

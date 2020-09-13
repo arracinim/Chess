@@ -30,7 +30,10 @@ class peon(piece):
         self.tipo = "PEON"
         self.position = (0,0)
 
-    def makeMove(self):
+    def Move(self):
+        """
+        Return: Lista con posibles movimientos de la ficha
+        """
         #generar los posibles movimientos para la ficha
         #Para un peón los movimiento son una y dos casillas hacia adelante
         listaMovimientos = []
@@ -46,19 +49,23 @@ class alfil(piece):
         self.tipo = "ARFIL"
         self.position = (0,0)
 
-    def makeMove(self):
+    def Move(self):
+        """
+        Return: Lista con posibles movimientos de la ficha
+        """
         #generar los posibles movimientos para la ficha
-        #Para un peón los movimiento son una y dos casillas hacia adelante
+        #Para un alfil el movimiento es en X
         listaMovimientos = []
         columna = self.position[1]
         fila = self.position[0]
 
-        for i,j in range(8):
-            if i != fila and j != columna:
-                listaMovimientos.append([fila-i,columna-j])
-                listaMovimientos.append([fila+i,columna+j])
-                listaMovimientos.append([fila-i,columna+j])
-                listaMovimientos.append([fila+i,columna-j])
+        for i in range(8):
+           for j in range(8):
+                if i != fila and j != columna:
+                    listaMovimientos.append([fila-i,columna-j])
+                    listaMovimientos.append([fila+i,columna+j])
+                    listaMovimientos.append([fila-i,columna+j])
+                    listaMovimientos.append([fila+i,columna-j])
 
         return listaMovimientos
 
@@ -67,7 +74,10 @@ class torre(piece):
         self.tipo = "TORRE"
         self.position = (0,0)
 
-    def makeMove(self):
+    def Move(self):
+        """
+        Return: Lista con posibles movimientos de la ficha
+        """
         #generar los posibles movimientos para la ficha
         #Para una torre los movimiento son en forma de cruz
 
@@ -90,7 +100,10 @@ class reina(piece):
         self.tipo = "PEON"
         self.position = (0,0)
 
-    def makeMove(self):
+    def Move(self):
+        """
+        Return: Lista con posibles movimientos de la ficha
+        """
         #generar los posibles movimientos para la ficha
         #Para la reina los posibles movimientos son en X y en cruz
         listaMovimientos = []
@@ -107,12 +120,13 @@ class reina(piece):
                 listaMovimientos.append([i, columna])
 
         #AGREGAMOS LOS MOVIMIENTOS EN X 
-        for i,j in range(8):
-            if i != fila and j != columna:
-                listaMovimientos.append([fila-i,columna-j])
-                listaMovimientos.append([fila+i,columna+j])
-                listaMovimientos.append([fila-i,columna+j])
-                listaMovimientos.append([fila+i,columna-j])
+        for i in range(8):
+           for j in range(8):
+                if i != fila and j != columna:
+                    listaMovimientos.append([fila-i,columna-j])
+                    listaMovimientos.append([fila+i,columna+j])
+                    listaMovimientos.append([fila-i,columna+j])
+                    listaMovimientos.append([fila+i,columna-j])
 
         return listaMovimientos
 
@@ -121,20 +135,36 @@ class rey(piece):
         self.tipo = "PEON"
         self.position = (0,0)
 
-    def makeMove(self):
+    def Move(self):
+        """
+        Return: Lista con posibles movimientos de la ficha
+        """
         #generar los posibles movimientos para la ficha
-        #Para un peón los movimiento son una y dos casillas hacia adelante
+        #Para un rey los posibles movimientos son un cuadrado alrededor de la ficha
         listaMovimientos = []
+        columna = self.position[1]
+        fila = self.position[0]
+        listaMovimientos.append([fila-1,columna-1])
+        listaMovimientos.append([fila-1, columna])
+        listaMovimientos.append([fila-1, columna+1])
+        listaMovimientos.append([fila, columna-1])
+        listaMovimientos.append([fila, columna+1])
+        listaMovimientos.append([fila+1, columna-1])
+        listaMovimientos.append([fila+1, columna])
+        listaMovimientos.append([fila+1,columna+1])
 
         return listaMovimientos
-        
+
 
 class caballo(piece):
     def __init__(self):
         self.tipo = "PEON"
         self.position = (0,0)
 
-    def makeMove(self):
+    def Move(self):
+        """
+        Return: Lista con posibles movimientos de la ficha
+        """
         #generar los posibles movimientos para la ficha
         #Para un caballo los posibles movimientos son en L
         listaMovimientos = []
