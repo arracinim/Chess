@@ -24,6 +24,12 @@ class piece(object):
         """
         return self.position
     
+    def getTipo(self):
+        """
+            Retorna el tipo de pieza
+        """
+        return self.tipo
+
 
 class peon(piece):
     def __init__(self):
